@@ -1,0 +1,8 @@
+<launch>
+    <!-- ros-driver-parameters -->
+    <param name="robot_ip" value="10.42.0.54"/> 
+    <param name="velocity_scaling" value="0.6"/>
+
+    <!-- ros-driver-node -->
+    <node name="owl_moveit_driver" pkg="owl_moveit_driver" type="owl_moveit_driver.py" output="screen"/>
+</launch>

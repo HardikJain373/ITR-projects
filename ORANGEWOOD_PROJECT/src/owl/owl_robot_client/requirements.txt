@@ -1,0 +1,4 @@
+msgpack
+grpcio
+grpcio-tools
+protobuf>=4.21.6

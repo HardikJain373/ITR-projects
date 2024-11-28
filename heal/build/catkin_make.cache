@@ -1,0 +1,2 @@
+Object_Impedance_Control_Dual_Arm_Addverb-main/heal_left:Object_Impedance_Control_Dual_Arm_Addverb-main/heal_left_and_right_independent:Object_Impedance_Control_Dual_Arm_Addverb-main/heal_right
+-DCATKIN_DEVEL_PREFIX=/home/hardik/heal/devel -DCMAKE_INSTALL_PREFIX=/home/hardik/heal/install -G Unix Makefiles

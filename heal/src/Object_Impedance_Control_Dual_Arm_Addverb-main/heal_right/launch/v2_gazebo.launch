@@ -1,0 +1,34 @@
+<launch>
+  <!-- Position and model name arguments -->
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0.0"/>
+  <arg name="model_name" default="heal2"/> <!-- Default can be overridden -->
+  <arg name="namespace" default="robot_namespace"/> <!-- Placeholder for namespace -->
+
+  <!-- Simulation arguments -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find heal_right)/config/controller_config_V2.yaml" command="load"/>
+  
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="cat '$(find heal_right)/urdf/robot_urdf.urdf'" />
+
+  <!-- Spawn URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+      args="-urdf -model $(arg model_name) -param robot_description -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+  <!-- Optional: Load and visualize in RViz -->
+  <!--group ns="$(arg namespace)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cobot_mesh_loader_copy)/rviz/cobot_new.rviz" required="true" />
+  </group!-->
+   
+  <!-- Load controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+  args="joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller joint6_position_controller joint_state_controller" />
+</launch>

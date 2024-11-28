@@ -1,0 +1,141 @@
+<!-- HEAL XML MODEL : PROPERIETERY DETAILS : PROTECTED UNDER THE NDA AGREEMENT
+DO NOT SHARE WITHOUT PRIOR PERMISSION FROM ADDVERB TECHNOLOGIES
+Author : rajesh.kumar01@addverb.com -->
+
+<mujoco model="heal">
+
+   <compiler angle="radian"
+      inertiafromgeom="false"
+      discardvisual="false"
+      meshdir="meshes/" />
+
+   <asset>
+      <mesh name="base_link" file="base_link.STL" />
+      <mesh name="link_1" file="link_1.STL" />
+      <mesh name="link_2" file="link_2.STL" />
+      <mesh name="link_3" file="link_3.STL" />
+      <mesh name="link_4" file="link_4.STL" />
+      <mesh name="link_5" file="link_5.STL" />
+      <mesh name="end_effector" file="end_effector.STL" />
+
+   </asset>
+
+   <!-- ENABLE THIS TO DISABLE CONTACTS  -->
+   <!-- <contact>
+      <exclude body1="base_link" body2="link1" />
+      <exclude body1="base_link" body2="link2" />
+      <exclude body1="base_link" body2="link3" />
+      <exclude body1="base_link" body2="link4" />
+      <exclude body1="base_link" body2="link5" />
+      <exclude body1="base_link" body2="end_effector" />
+
+      <exclude body1="link1" body2="link2" />
+      <exclude body1="link1" body2="link3" />
+      <exclude body1="link1" body2="link4" />
+      <exclude body1="link1" body2="link5" />
+      <exclude body1="link1" body2="end_effector" />
+
+      <exclude body1="link2" body2="link3" />
+      <exclude body1="link2" body2="link4" />
+      <exclude body1="link2" body2="link5" />
+      <exclude body1="link2" body2="end_effector" />
+
+      <exclude body1="link3" body2="link4" />
+      <exclude body1="link3" body2="link5" />
+      <exclude body1="link3" body2="end_effector" />
+
+      <exclude body1="link4" body2="link5" />
+      <exclude body1="link4" body2="end_effector" />
+
+      <exclude body1="link5" body2="end_effector" />
+
+   </contact> -->
+
+   <worldbody>
+      <geom type="plane" size="5 5 .01" pos="0 0 -0.3" />
+      <body name="base_link" pos="0 0 0" euler="0 0 0">
+         <inertial pos="0.0030658 0.0030653 0.0037803" mass="0.8"
+            fullinertia="0.0030658 0.0030653 0.0037803 0 0 0" />
+         <geom type="mesh" mesh="base_link" />
+
+
+         <body name="link1" pos="0 0 0.21" euler="0 0 0">
+            <inertial pos="0.016361 1.9519E-06 0.12777" mass="7.92"
+               fullinertia="0.0031793 0.0029103 0.0025838 0 0 0" />
+            <joint name="joint_1" type="hinge" pos="0 0 0" axis="0 0 -1" />
+            <geom type="mesh" mesh="link_1" />
+
+
+            <body name="link2" pos="-0.001 0.09 0.15" euler="1.57 0 0">
+               <inertial pos="0.0012292 0.14834 0.025157" mass="1.24"
+                  fullinertia="0.0025136 0.00042107 0.0028273 0 0 0" />
+               <joint name="joint_2" type="hinge" pos="0 0 0" axis="0 0 1" />
+               <geom type="mesh" mesh="link_2" />
+
+               <body name="link3" pos="0 0.3 0" quat="1 0 0 0">
+                  <inertial pos="0.039052 0.00030808 0.069869" mass="5.57"
+                     fullinertia="0.001558 0.001838 0.0021061 0 0 0" />
+                  <joint name="joint_3" type="hinge" pos="0 0 0" axis="0 0 -1" />
+                  <geom type="mesh" mesh="link_3" />
+
+                  <body name="link4" pos="0 0.162 0.086" euler="-1.57 0 0">
+                     <inertial pos="-5.1777E-05 -0.054169 0.11594" mass="1.9"
+                        fullinertia="0.0005038 0.00043228 0.00056302 0 0 0" />
+                     <joint name="joint_4" type="hinge" pos="0 0 0" axis="0 0 -1" />
+                     <geom type="mesh" mesh="link_4" />
+
+                     <body name="link5" pos="0 0.03059 0.1601" euler="0.5236 0 3.1416">
+                        <inertial pos="-0.056159 2.097E-05 0.071992" mass="1.78"
+                           fullinertia="0.00047105 0.00039055 0.0004004 0 0 0" />
+                        <joint name="joint_5" type="hinge" pos="0 0 0" axis="0 0 -1" />
+                        <geom type="mesh" mesh="link_5" />
+
+                        <body name="end_effector" pos="0 -0.08 0.065" euler="1.58 0 0">
+                           <inertial pos="-0.056159 2.097E-05 0.071992" mass="0.00001"
+                           fullinertia = "0.000001 0.0000001 0.000001 0 0 0" />
+                           <joint name="joint_6" type="hinge" pos="0 0 0" axis="0 0 -1" />
+                           <geom type="mesh" mesh="end_effector" />
+
+                        </body>
+                     </body>
+                  </body>
+               </body>
+            </body>
+         </body>
+      </body>
+
+   </worldbody>
+
+   <!-- TORQUE CONTROL -->
+   <!-- <actuator>
+         <motor name="turret" joint="joint_1"/>
+         <motor name="shoulder" joint="joint_2"/>
+         <motor name="elbow" joint="joint_3"/>
+         <motor name="wrist_1" joint="joint_4"/>
+         <motor name="wrist_2" joint="joint_5"/>
+         <motor name="wrist_3" joint="joint_6"/>
+      </actuator> -->
+
+
+   <!-- VELOCITY CONTROL -->
+   <actuator>
+      <velocity name="turret" joint="joint_1" gear="1" forcelimited="true"
+         kv="1" forcerange="-10 10"
+      />
+      <velocity name="shoulder" joint="joint_2" gear="1" forcelimited="true"
+         kv="1" forcerange="-10 10"
+      />
+      <velocity name="elbow" joint="joint_3" gear="1" forcelimited="true"
+         kv="1" forcerange="-10 10"
+      />
+      <velocity name="wrist_1" joint="joint_4" gear="1" forcelimited="true"
+         kv="1" forcerange="-10 10"
+      />
+      <velocity name="wrist_2" joint="joint_5" gear="1" forcelimited="true"
+         kv="1" forcerange="-10 10"
+      />
+      <velocity name="wrist_3" joint="joint_6" gear="1" forcelimited="true"
+         kv="1" forcerange="-10 10"
+      />
+   </actuator>
+</mujoco>

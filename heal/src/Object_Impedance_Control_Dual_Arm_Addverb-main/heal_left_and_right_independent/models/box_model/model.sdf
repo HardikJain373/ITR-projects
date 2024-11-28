@@ -1,0 +1,215 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="my_box">
+        <static>false</static>
+        <link name="link">
+            <!-- Top Face -->
+            <collision name="top_collision">
+                <pose>0 0 0.075 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>10.0</mu>
+                            <mu2>10.0</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="top_visual">
+                <pose>0 0 0.075 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>0.5 1 0.5 1</ambient>
+                </material>
+            </visual>
+            <inertial>
+                <mass>0.01667</mass>
+                <inertia>
+                    <ixx>0.000014</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.000014</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.000023</izz>
+                </inertia>
+            </inertial>
+
+            <!-- Bottom Face -->
+            <collision name="bottom_collision">
+                <pose>0 0 -0.075 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>10.0</mu>
+                            <mu2>10.0</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="bottom_visual">
+                <pose>0 0 -0.075 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>0.5 1 0.5 1</ambient>
+                </material>
+            </visual>
+            <inertial>
+                <mass>0.01667</mass>
+                <inertia>
+                    <ixx>0.000014</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.000014</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.000023</izz>
+                </inertia>
+            </inertial>
+
+            <!-- Left Face -->
+            <collision name="left_collision">
+                <pose>-0.125 0 0 0 1.5708 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.15 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>10.0</mu>
+                            <mu2>10.0</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="left_visual">
+                <pose>-0.125 0 0 0 1.5708 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.15 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>0.5 0 0.5 1</ambient>
+                </material>
+            </visual>
+            <inertial>
+                <mass>0.01667</mass>
+                <inertia>
+                    <ixx>0.000023</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.000014</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.000014</izz>
+                </inertia>
+            </inertial>
+
+            <!-- Back Face -->
+            <collision name="back_collision">
+                <pose>0 -0.1 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.01 0.15</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>10.0</mu>
+                            <mu2>10.0</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="back_visual">
+                <pose>0 -0.1 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.01 0.15</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>1 0 0 1</ambient>
+                </material>
+            </visual>
+
+            <!-- Right Face -->
+            <collision name="right_collision">
+                <pose>0.125 0 0 0 1.5708 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.15 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>10.0</mu>
+                            <mu2>10.0</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="right_visual">
+                <pose>0.125 0 0 0 1.5708 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.15 0.2 0.01</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>0.5 0 0.5 1</ambient> <!-- Purple color -->
+                </material>
+            </visual>
+
+            <!-- Front Face -->
+            <collision name="front_collision">
+                <pose>0 0.1 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.01 0.15</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>10.0</mu>
+                            <mu2>10.0</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="front_visual">
+                <pose>0 0.1 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.25 0.01 0.15</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>1 0 0 1</ambient> <!-- Red color -->
+                </material>
+            </visual>
+
+        </link>
+    </model>
+</sdf>

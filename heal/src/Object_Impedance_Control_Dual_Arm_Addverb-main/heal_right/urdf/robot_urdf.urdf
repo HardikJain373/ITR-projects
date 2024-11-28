@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="heal2">
+
+<link
+    name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+  </joint>
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="6.1138E-05 1.7555E-05 0.097325"
+        rpy="0 0 0" />
+      <mass
+        value="3.6282" />
+      <inertia
+        ixx="0.0073478"
+        ixy="4.0081E-07"
+        ixz="4.4767E-06"
+        iyy="0.0073429"
+        iyz="1.1049E-06"
+        izz="0.011821" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-8.8386E-05 0.022834 0.13346"
+        rpy="0 0 0" />
+      <mass
+        value="2.5503" />
+      <inertia
+        ixx="0.0042601"
+        ixy="-3.1693E-06"
+        ixz="7.5868E-06"
+        iyy="0.0049054"
+        iyz="-6.6829E-05"
+        izz="0.0038997" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1_heal2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.205"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+      <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10000"
+      velocity="10" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.00017021 0.15061 -0.016973"
+        rpy="0 0 0" />
+      <mass
+        value="1.0366" />
+      <inertia
+        ixx="0.0086581"
+        ixy="4.2443E-06"
+        ixz="3.3833E-07"
+        iyy="0.0014536"
+        iyz="-1.2083E-06"
+        izz="0.0097684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2_heal2"
+    type="revolute">
+    <origin
+      xyz="0 0.0875 0.1498"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 -1" />
+      <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10000"
+      velocity="10" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="-7.5516E-07 0.034461 0.069151"
+        rpy="0 0 0" />
+      <mass
+        value="3.1645" />
+      <inertia
+        ixx="0.0042531"
+        ixy="-2.4663E-06"
+        ixz="6.513E-06"
+        iyy="0.0036993"
+        iyz="-3.96E-05"
+        izz="0.0048772" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3_heal2"
+    type="revolute">
+    <origin
+      xyz="0 0.3 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 -1" />
+      <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10000"
+      velocity="10" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="1.3303E-05 0.047648 0.10412"
+        rpy="0 0 0" />
+      <mass
+        value="1.1746" />
+      <inertia
+        ixx="0.0014257"
+        ixy="-2.9805E-07"
+        ixz="-3.8E-07"
+        iyy="0.001257"
+        iyz="-0.00028157"
+        izz="0.0014103" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4_heal2"
+    type="revolute">
+    <origin
+      xyz="0 0.1593 0.0875"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 1" />
+      <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10000"
+      velocity="10" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="-5.6194E-05 -0.033236 0.059696"
+        rpy="0 0 0" />
+      <mass
+        value="1.0276" />
+      <inertia
+        ixx="0.00077425"
+        ixy="-3.0073E-07"
+        ixz="-2.1371E-06"
+        iyy="0.00091013"
+        iyz="1.6623E-05"
+        izz="0.00083086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/link 5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5_heal2"
+    type="revolute">
+    <origin
+      xyz="0 0.03185 0.16105"
+      rpy="0.5236 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 0 -1" />
+      <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10000"
+      velocity="10" />
+  </joint>
+  <link
+    name="end_effector">
+    <inertial>
+      <origin
+        xyz="7.0245E-06 -0.00022138 -0.016847"
+        rpy="0 0 0" />
+      <mass
+        value="0.22456" />
+      <inertia
+        ixx="0.00018968"
+        ixy="-5.0761E-08"
+        ixz="1.4887E-08"
+        iyy="0.00019125"
+        iyz="-5.5675E-07"
+        izz="0.00032612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/end effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://heal_right/meshes/robot_meshes/end effector.STL" />
+      </geometry>
+      <gazebo>
+        <material>Gazebo/Grey</material>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.0</mu>  <!-- Coefficient of friction -->
+              <mu2>10.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </gazebo>
+    </collision>
+  </link>
+  <joint
+    name="joint_6_heal2"
+    type="revolute">
+    <origin
+      xyz="0 -0.1227 0.0654"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="end_effector" />
+    <axis
+      xyz="0 0 -1" />
+      <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10000"
+      velocity="10" />
+  </joint>
+<transmission name="joint1_transmission_heal2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1_heal2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint1_motor_heal2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="joint2_transmission_heal2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2_heal2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint2_motor_heal2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="joint3_transmission_heal2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3_heal2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint3_motor_heal2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="joint4_transmission_heal2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4_heal2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint4_motor_heal2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="joint5_transmission_heal2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_5_heal2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint5_motor_heal2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="joint6_transmission_heal2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6_heal2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint6_motor_heal2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+
+</robot>

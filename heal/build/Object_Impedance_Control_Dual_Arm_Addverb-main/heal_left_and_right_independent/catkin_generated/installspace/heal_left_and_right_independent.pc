@@ -1,0 +1,8 @@
+prefix=/home/hardik/heal/install
+
+Name: heal_left_and_right_independent
+Description: Description of heal_left_and_right_independent
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
